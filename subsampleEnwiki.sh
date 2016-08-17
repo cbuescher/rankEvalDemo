@@ -72,4 +72,13 @@ done <queries.txt
 
 # finally write everything in bulk
 echo "bulk indexing"
-curl -s -XPOST $es/$target/_bulk --data-binary "@bulk_index.txt";
+
+# shop down bulk file, might be too large otherwise
+split -a 3 -l 500 bulk_index.txt bulkpart_
+for file in bulkpart_*; do
+  echo -n "${file}:  "
+  took=$(curl -s -XPOST $es/$target/_bulk?pretty --data-binary @$file |
+    grep took | cut -d':' -f 2 | cut -d',' -f 1)
+  printf '%7s\n' $took
+  [ "x$took" = "x" ] || rm $file
+done
