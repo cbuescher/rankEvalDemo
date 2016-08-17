@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export es=192.168.2.201:9200
+export es=localhost:9200
 export index=enwiki
 export target=enwiki_rank
 
