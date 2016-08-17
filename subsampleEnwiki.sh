@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# change the following url and index names to reflect your local ES instance and source index
 export es=192.168.2.201:9200
 export index=enwiki
 export target=enwiki_rank
@@ -73,7 +74,7 @@ done <queries.txt
 # finally write everything in bulk
 echo "bulk indexing"
 
-# shop down bulk file, might be too large otherwise
+# chop down bulk file, might be too large otherwise
 split -a 3 -l 500 bulk_index.txt bulkpart_
 for file in bulkpart_*; do
   echo -n "${file}:  "
