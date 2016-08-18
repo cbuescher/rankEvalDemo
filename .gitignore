@@ -1,3 +1,496 @@
 bulk_index.txt
 queries.txt
 titles.txt
+{
+  "dynamic": "false",
+  "_all": {
+    "enabled": false
+  },
+  "properties": {
+    "all": {
+      "type": "text",
+      "fields": {
+        "plain": {
+          "type": "text",
+          "analyzer": "plain",
+          "search_analyzer": "plain_search",
+          "position_increment_gap": 10
+        }
+      },
+      "analyzer": "text",
+      "search_analyzer": "text_search",
+      "position_increment_gap": 10
+    },
+    "all_near_match": {
+      "type": "text",
+      "norms": false,
+      "index_options": "freqs",
+      "fields": {
+        "asciifolding": {
+          "type": "text",
+          "norms": false,
+          "index_options": "freqs",
+          "analyzer": "near_match_asciifolding",
+          "position_increment_gap": 10
+        }
+      },
+      "analyzer": "near_match",
+      "position_increment_gap": 10
+    },
+    "auxiliary_text": {
+      "type": "text",
+      "index_options": "offsets",
+      "fields": {
+        "plain": {
+          "type": "text",
+          "index_options": "offsets",
+          "analyzer": "plain",
+          "search_analyzer": "plain_search",
+          "position_increment_gap": 10
+        }
+      },
+      "copy_to": [
+        "all"
+      ],
+      "analyzer": "text",
+      "search_analyzer": "text_search",
+      "position_increment_gap": 10
+    },
+    "category": {
+      "type": "text",
+      "norms": false,
+      "index_options": "offsets",
+      "fields": {
+        "lowercase_keyword": {
+          "type": "text",
+          "norms": false,
+          "index_options": "docs",
+          "analyzer": "lowercase_keyword",
+          "position_increment_gap": 10
+        },
+        "plain": {
+          "type": "text",
+          "norms": false,
+          "index_options": "offsets",
+          "analyzer": "plain",
+          "search_analyzer": "plain_search",
+          "position_increment_gap": 10
+        }
+      },
+      "copy_to": [
+        "all",
+        "all",
+        "all",
+        "all",
+        "all",
+        "all",
+        "all",
+        "all"
+      ],
+      "analyzer": "text",
+      "search_analyzer": "text_search",
+      "position_increment_gap": 10
+    },
+    "coordinates": {
+      "type": "nested",
+      "properties": {
+        "coord": {
+          "type": "geo_point",
+          "lat_lon": true
+        },
+        "country": {
+          "type": "text"
+        },
+        "dim": {
+          "type": "float"
+        },
+        "globe": {
+          "type": "text"
+        },
+        "name": {
+          "type": "text",
+          "index": false
+        },
+        "primary": {
+          "type": "boolean"
+        },
+        "region": {
+          "type": "text"
+        },
+        "type": {
+          "type": "text"
+        }
+      }
+    },
+    "external_link": {
+      "type": "text",
+      "norms": false,
+      "index_options": "docs",
+      "analyzer": "keyword"
+    },
+    "file_text": {
+      "type": "text",
+      "index_options": "offsets",
+      "fields": {
+        "plain": {
+          "type": "text",
+          "index_options": "offsets",
+          "analyzer": "plain",
+          "search_analyzer": "plain_search",
+          "position_increment_gap": 10
+        }
+      },
+      "copy_to": [
+        "all"
+      ],
+      "analyzer": "text",
+      "search_analyzer": "text_search",
+      "position_increment_gap": 10
+    },
+    "heading": {
+      "type": "text",
+      "norms": false,
+      "index_options": "offsets",
+      "fields": {
+        "plain": {
+          "type": "text",
+          "norms": false,
+          "index_options": "offsets",
+          "analyzer": "plain",
+          "search_analyzer": "plain_search",
+          "position_increment_gap": 10
+        }
+      },
+      "copy_to": [
+        "all",
+        "all",
+        "all",
+        "all",
+        "all"
+      ],
+      "analyzer": "text",
+      "search_analyzer": "text_search",
+      "position_increment_gap": 10
+    },
+    "incoming_links": {
+      "type": "long"
+    },
+    "language": {
+      "type": "text",
+      "norms": false,
+      "index_options": "docs",
+      "analyzer": "keyword"
+    },
+    "local_sites_with_dupe": {
+      "type": "text",
+      "norms": false,
+      "index_options": "docs",
+      "analyzer": "lowercase_keyword"
+    },
+    "namespace": {
+      "type": "long"
+    },
+    "namespace_text": {
+      "type": "text",
+      "norms": false,
+      "index_options": "docs",
+      "analyzer": "keyword"
+    },
+    "opening_text": {
+      "type": "text",
+      "fields": {
+        "plain": {
+          "type": "text",
+          "analyzer": "plain",
+          "search_analyzer": "plain_search",
+          "position_increment_gap": 10
+        }
+      },
+      "copy_to": [
+        "all",
+        "all",
+        "all"
+      ],
+      "analyzer": "text",
+      "search_analyzer": "text_search",
+      "position_increment_gap": 10
+    },
+    "outgoing_link": {
+      "type": "text",
+      "norms": false,
+      "index_options": "docs",
+      "analyzer": "keyword"
+    },
+    "popularity_score": {
+      "type": "double"
+    },
+    "redirect": {
+      "dynamic": "false",
+      "properties": {
+        "namespace": {
+          "type": "long"
+        },
+        "title": {
+          "type": "text",
+          "norms": false,
+          "index_options": "offsets",
+          "fields": {
+            "keyword": {
+              "type": "text",
+              "norms": false,
+              "index_options": "docs",
+              "analyzer": "keyword",
+              "position_increment_gap": 10
+            },
+            "near_match": {
+              "type": "text",
+              "norms": false,
+              "index_options": "offsets",
+              "analyzer": "near_match",
+              "position_increment_gap": 10
+            },
+            "near_match_asciifolding": {
+              "type": "text",
+              "norms": false,
+              "index_options": "offsets",
+              "analyzer": "near_match_asciifolding",
+              "position_increment_gap": 10
+            },
+            "plain": {
+              "type": "text",
+              "norms": false,
+              "index_options": "offsets",
+              "analyzer": "plain",
+              "search_analyzer": "plain_search",
+              "position_increment_gap": 10
+            },
+            "prefix": {
+              "type": "text",
+              "norms": false,
+              "index_options": "offsets",
+              "analyzer": "prefix",
+              "search_analyzer": "near_match",
+              "position_increment_gap": 10
+            },
+            "prefix_asciifolding": {
+              "type": "text",
+              "norms": false,
+              "index_options": "offsets",
+              "analyzer": "prefix_asciifolding",
+              "search_analyzer": "near_match_asciifolding",
+              "position_increment_gap": 10
+            },
+            "suggest": {
+              "type": "text",
+              "norms": false,
+              "analyzer": "suggest",
+              "position_increment_gap": 10
+            }
+          },
+          "copy_to": [
+            "suggest",
+            "all",
+            "all",
+            "all",
+            "all",
+            "all",
+            "all",
+            "all",
+            "all",
+            "all",
+            "all",
+            "all",
+            "all",
+            "all",
+            "all",
+            "all",
+            "all_near_match",
+            "all_near_match",
+            "all_near_match",
+            "all_near_match",
+            "all_near_match",
+            "all_near_match",
+            "all_near_match",
+            "all_near_match",
+            "all_near_match",
+            "all_near_match",
+            "all_near_match",
+            "all_near_match",
+            "all_near_match",
+            "all_near_match",
+            "all_near_match"
+          ],
+          "analyzer": "text",
+          "search_analyzer": "text_search",
+          "position_increment_gap": 10
+        }
+      }
+    },
+    "source_text": {
+      "type": "text",
+      "norms": false,
+      "fields": {
+        "plain": {
+          "type": "text",
+          "norms": false,
+          "analyzer": "plain",
+          "search_analyzer": "plain_search",
+          "position_increment_gap": 10
+        },
+        "trigram": {
+          "type": "text",
+          "norms": false,
+          "index_options": "docs",
+          "analyzer": "trigram",
+          "position_increment_gap": 10
+        }
+      },
+      "analyzer": "text",
+      "search_analyzer": "text_search",
+      "position_increment_gap": 10
+    },
+    "suggest": {
+      "type": "text",
+      "analyzer": "suggest"
+    },
+    "template": {
+      "type": "text",
+      "norms": false,
+      "index_options": "docs",
+      "analyzer": "lowercase_keyword"
+    },
+    "text": {
+      "type": "text",
+      "index_options": "offsets",
+      "fields": {
+        "plain": {
+          "type": "text",
+          "index_options": "offsets",
+          "analyzer": "plain",
+          "search_analyzer": "plain_search",
+          "position_increment_gap": 10
+        },
+        "word_count": {
+          "type": "token_count",
+          "store": true,
+          "analyzer": "plain"
+        }
+      },
+      "copy_to": [
+        "all"
+      ],
+      "analyzer": "text",
+      "search_analyzer": "text_search",
+      "position_increment_gap": 10
+    },
+    "text_bytes": {
+      "type": "long",
+      "index": false
+    },
+    "timestamp": {
+      "type": "date",
+      "format": "epoch_millis||dateOptionalTime"
+    },
+    "title": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "text",
+          "index_options": "docs",
+          "analyzer": "keyword",
+          "position_increment_gap": 10
+        },
+        "near_match": {
+          "type": "text",
+          "index_options": "docs",
+          "analyzer": "near_match",
+          "position_increment_gap": 10
+        },
+        "near_match_asciifolding": {
+          "type": "text",
+          "index_options": "docs",
+          "analyzer": "near_match_asciifolding",
+          "position_increment_gap": 10
+        },
+        "plain": {
+          "type": "text",
+          "analyzer": "plain",
+          "search_analyzer": "plain_search",
+          "position_increment_gap": 10
+        },
+        "prefix": {
+          "type": "text",
+          "index_options": "docs",
+          "analyzer": "prefix",
+          "search_analyzer": "near_match",
+          "position_increment_gap": 10
+        },
+        "prefix_asciifolding": {
+          "type": "text",
+          "index_options": "docs",
+          "analyzer": "prefix_asciifolding",
+          "search_analyzer": "near_match_asciifolding",
+          "position_increment_gap": 10
+        },
+        "suggest": {
+          "type": "text",
+          "analyzer": "suggest",
+          "position_increment_gap": 10
+        }
+      },
+      "copy_to": [
+        "suggest",
+        "all",
+        "all",
+        "all",
+        "all",
+        "all",
+        "all",
+        "all",
+        "all",
+        "all",
+        "all",
+        "all",
+        "all",
+        "all",
+        "all",
+        "all",
+        "all",
+        "all",
+        "all",
+        "all",
+        "all",
+        "all_near_match",
+        "all_near_match",
+        "all_near_match",
+        "all_near_match",
+        "all_near_match",
+        "all_near_match",
+        "all_near_match",
+        "all_near_match",
+        "all_near_match",
+        "all_near_match",
+        "all_near_match",
+        "all_near_match",
+        "all_near_match",
+        "all_near_match",
+        "all_near_match",
+        "all_near_match",
+        "all_near_match",
+        "all_near_match",
+        "all_near_match",
+        "all_near_match"
+      ],
+      "analyzer": "text",
+      "search_analyzer": "text_search",
+      "position_increment_gap": 10
+    },
+    "wikibase_item": {
+      "type": "text",
+      "norms": false,
+      "index_options": "docs",
+      "analyzer": "keyword"
+    }
+  }
+}
+mapping.txt

@@ -21,9 +21,10 @@ curl -s -XGET $es/$index/_settings |
   curl -XPUT $es_target/$target?pretty -d @-  
 
 echo "copying source mapping to target"
+# TODO remove manual correction step
 curl -s -XGET $es/$index/_mapping |
-  jq --arg ind $index .[$ind].mappings.page |
-  curl -XPUT $es_target/$target/_mapping/page?pretty -d @-
+  jq --arg ind $index .[$ind].mappings.page > mapping.txt
+cat corrected_mapping.txt | curl -XPUT $es_target/$target/_mapping/page?pretty -d @-
 
 
 # get all articles that are rated in discernatron_ratings.tsv, lookup by title
