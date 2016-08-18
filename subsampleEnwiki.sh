@@ -1,13 +1,14 @@
 #!/bin/bash
 
 # change the following url and index names to reflect your local ES instance and source index
-export es=192.168.2.201:9200
+export es=192.168.2.110:9200
+export es_target=localhost:9200
 export index=enwiki
 export target=enwiki_rank
 
 # clean target index in case it already exists
 echo "Removing old target index if it exists. Ignore errors if index didn't exist before"
-curl -s -XDELETE $es/$target?pretty
+curl -s -XDELETE $es_target/$target?pretty
 
 # copy over settings and mappings from source index
 echo "copying source settings to target"
@@ -17,12 +18,12 @@ curl -s -XGET $es/$index/_settings |
     number_of_shards: 1,
     number_of_replicas: 0
   }' |
-  curl -XPUT $es/$target?pretty -d @-  
+  curl -XPUT $es_target/$target?pretty -d @-  
 
 echo "copying source mapping to target"
 curl -s -XGET $es/$index/_mapping |
   jq --arg ind $index .[$ind].mappings.page |
-  curl -XPUT $es/$target/_mapping/page?pretty -d @-
+  curl -XPUT $es_target/$target/_mapping/page?pretty -d @-
 
 
 # get all articles that are rated in discernatron_ratings.tsv, lookup by title
@@ -78,7 +79,7 @@ echo "bulk indexing"
 split -a 3 -l 500 bulk_index.txt bulkpart_
 for file in bulkpart_*; do
   echo -n "${file}:  "
-  took=$(curl -s -XPOST $es/$target/_bulk?pretty --data-binary @$file |
+  took=$(curl -s -XPOST $es_target/$target/_bulk?pretty --data-binary @$file |
     grep took | cut -d':' -f 2 | cut -d',' -f 1)
   printf '%7s\n' $took
   [ "x$took" = "x" ] || rm $file
