@@ -1,0 +1,22 @@
+{
+  "rank_eval" : {
+    "spec_id" : "my-rank-eval",
+    "quality_level" : 0.5,
+    "unknown_docs" : [
+      {
+        "jfk_query" : [
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "1528558"
+          },
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "1960795"
+          }
+        ]
+      }
+    ]
+  }
+}

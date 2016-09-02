@@ -1,0 +1,70 @@
+{
+  "rank_eval" : {
+    "spec_id" : "my-rank-eval",
+    "quality_level" : 0.5666666666666667,
+    "unknown_docs" : [
+      {
+        "navalFlags_query" : [
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "660903"
+          },
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "619595"
+          },
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "14139166"
+          }
+        ]
+      },
+      {
+        "jfk_query" : [
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "1528558"
+          },
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "1960795"
+          }
+        ]
+      },
+      {
+        "beerFlood_query" : [
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "19286446"
+          },
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "3886796"
+          },
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "5348049"
+          },
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "13215671"
+          },
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "25532062"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "rank_eval" : {
+    "spec_id" : "my-rank-eval",
+    "quality_level" : 1.0,
+    "unknown_docs" : [
+      {
+        "flood_query" : [
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "100144"
+          },
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "41228854"
+          },
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "19286446"
+          },
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "3886796"
+          },
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "5348049"
+          },
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "47436315"
+          },
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "3582891"
+          },
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "13215671"
+          },
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "25532062"
+          }
+        ]
+      }
+    ]
+  }
+}

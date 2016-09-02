@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # change the following url and index names to reflect your local ES instance and source index
-export es=192.168.2.110:9200
+export es=192.168.2.201:9200
 export es_target=localhost:9200
 export index=enwiki
 export target=enwiki_rank

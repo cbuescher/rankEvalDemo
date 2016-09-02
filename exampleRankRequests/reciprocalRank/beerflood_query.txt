@@ -1,0 +1,455 @@
+{
+  "spec_id" : "my-rank-eval",
+  "requests" : [
+    {
+      "id" : "flood_query",
+      "request" : {
+        "query" : {
+          "match" : {
+            "all" : {
+              "query" : "the great beer flood",
+              "operator" : "OR",
+              "prefix_length" : 0,
+              "max_expansions" : 50,
+              "fuzzy_transpositions" : true,
+              "lenient" : false,
+              "zero_terms_query" : "NONE",
+              "boost" : 1.0
+            }
+          }
+        }
+      },
+      "ratings" : [
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "13370208"
+          },
+          "rating" : 1
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "9994744"
+          },
+          "rating" : 1
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "8533032"
+          },
+          "rating" : 1
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "22366"
+          },
+          "rating" : 1
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "34948"
+          },
+          "rating" : 1
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "1377948"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "231395"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "123052"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "7688189"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "31033"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "71262"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "1151773"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "728136"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "2012260"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "98933"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "42082319"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "11960536"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "42208"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "443940"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "414744"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "4939127"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "6195"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "62480"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "218075"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "2108886"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "3582891"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "454915"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "931871"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "40387083"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "192480"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "10481"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "195565"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "47436315"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "41523"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "22763"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "11830664"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "249601"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "162249"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "7806078"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "1203711"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "874"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "80028"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "1461470"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "629870"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "312755"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "794129"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "6095325"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "58547"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "100144"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "41228854"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "345577"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "5509936"
+          },
+          "rating" : 0
+        },
+        {
+          "key" : {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "18315"
+          },
+          "rating" : 0
+        }
+      ]
+    }
+  ],
+  "metric" : {
+    "reciprocal_rank" : {
+      "max_acceptable_rank" : 10
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "rank_eval" : {
+    "spec_id" : "my-rank-eval",
+    "quality_level" : 1.0,
+    "unknown_docs" : [
+      {
+        "navalFlags_query" : [
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "660903"
+          },
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "619595"
+          },
+          {
+            "index" : "enwiki_rank",
+            "type" : "page",
+            "doc_id" : "14139166"
+          }
+        ]
+      }
+    ]
+  }
+}
