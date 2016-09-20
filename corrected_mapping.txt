@@ -89,8 +89,7 @@
       "type": "nested",
       "properties": {
         "coord": {
-          "type": "geo_point",
-          "lat_lon": true
+          "type": "geo_point"
         },
         "country": {
           "type": "text"
