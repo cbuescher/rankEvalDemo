@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # change the following url and index names to reflect your local ES instance and source index
-export es=192.168.2.201:9200
+#export es=192.168.2.201:9200
+export es=192.168.2.110:9200
 export es_target=localhost:9200
 export index=enwiki
 export target=enwiki_rank
@@ -34,9 +35,7 @@ cat discernatron_ratings.tsv|awk -F'\t' '{print $2}' > titles.txt
 
 while read title; 
 do
-  result=$(echo "{}" | jq --arg titel "$title" '{ query: { match: {
-"title.keyword": $titel } } }' |
-  curl -s -XGET $es/$index/page/_search?pretty -d @-)
+  result=$(echo "{}" | jq --arg titel "$title" '{ query: { match: { "title.keyword": $titel } } }' | curl -s -XGET $es/$index/page/_search?pretty -d @-)
   id=$(echo $result | jq -r .hits.hits[0]._id)
   source=$(echo $result | jq -c .hits.hits[0]._source)
   if [ $id != null ]; then
