@@ -35,7 +35,9 @@ cat discernatron_ratings.tsv|awk -F'\t' '{print $2}' > titles.txt
 
 while read title; 
 do
-  result=$(echo "{}" | jq --arg titel "$title" '{ query: { match: { "title.keyword": $titel } } }' | curl -s -XGET $es/$index/page/_search?pretty -d @-)
+  result=$(echo "{}" | jq --arg titel "$title" '{ query: { bool: { should: [ {
+match: { "title.keyword": $titel } }, { match: { "redirect.title.keyword":
+$titel } } ] } } }' | curl -s -XGET $es/$index/page/_search?pretty -d @-)
   id=$(echo $result | jq -r .hits.hits[0]._id)
   source=$(echo $result | jq -c .hits.hits[0]._source)
   if [ $id != null ]; then
