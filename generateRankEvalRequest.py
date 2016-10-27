@@ -1,5 +1,4 @@
 
-import sets
 from elasticsearch import Elasticsearch
 import json
 import sys
@@ -76,7 +75,7 @@ def printAllQueries() :
     f = open('discernatron_ratings.tsv', 'r')
 
     i = 0
-    querySet = sets.Set()
+    querySet = set()
     for line in f:
         parts = line.split('\t')
         querySet.add(parts[0])
@@ -93,13 +92,13 @@ def createRequestForQuery(queryString, requestId) :
     f = open('discernatron_ratings.tsv', 'r')
 
     # find all ratings related to a query
-    ratingDocTitlesAndRatings = sets.Set()
+    ratingDocTitlesAndRatings = set()
     for line in f:
         parts = line.split('\t')
         if (queryString == parts[0]) :
             ratingDocTitlesAndRatings.add((parts[1], parts[2]))
     
-    idsAndRatings = sets.Set()
+    idsAndRatings = set()
     es = Elasticsearch()
     
     # find the corresponding doc ids is elasticsearch
