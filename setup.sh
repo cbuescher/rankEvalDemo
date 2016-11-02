@@ -20,8 +20,7 @@ git checkout feature/rank-eval
 git reset --hard origin/feature/rank-eval
 gradle assemble
 cd ..
-
-tar -xf ./elasticsearch/distribution/zip/build/distributions/elasticsearch-6.0.0-alpha1-SNAPSHOT.zip -C .
+tar -xvzf ./elasticsearch/distribution/tar/build/distributions/elasticsearch-6.0.0-alpha1-SNAPSHOT.tar.gz -C .
 
 currentpath="$(pwd)"
 elasticsearch-6.0.0-alpha1-SNAPSHOT/bin/elasticsearch-plugin install file://localhost$currentpath/elasticsearch/plugins/analysis-icu/build/distributions/analysis-icu-6.0.0-alpha1-SNAPSHOT.zip
