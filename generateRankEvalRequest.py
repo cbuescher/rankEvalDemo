@@ -131,34 +131,33 @@ def createRequestForQuery(queryString, requestId) :
         )
     request = {
             'id' : requestId,
-            'request': {
-                "query" : {
-                  "match" : {
-                    "opening_text" : {
-                      "query" : queryString
-                    }
-                  }
-                }
-            },
+            'params' : {
+		'query_string' : queryString
+	    },
             'ratings': ratings
         }
     return request
         
 def createRequestForQueries(queryStrings) : 
     requests = []
-    idCounter = 0
     for queryString in queryStrings :
         print('processing query ' + queryString)
-        requests.append(createRequestForQuery(queryString, str(idCounter)))
-        idCounter=idCounter+1
+        requests.append(createRequestForQuery(queryString, queryString.replace(" ", "_") + "_query"))
         
     return {
-                'requests': requests, 
-                "metric" : {
-                   "reciprocal_rank" : {
-                       "max_acceptable_rank" : 10
+		# define your own request template here if needed
+                'template' : {
+		   'inline' : {
+			'query' : { 'match' : {'all' : '{{query_string}}' }}
+	 	   }
+		},  
+		# define your own metric here if needed
+                'metric' : {
+                   'precision' : {
+		       'relevant_rating_threshold' : 2
                     }
-                }
+                },
+                'requests' : requests
             }
         
 def main(argv):
@@ -171,8 +170,4 @@ def main(argv):
 
 if __name__ == '__main__':
     main(sys.argv[1:])
-
-
-
-
 
