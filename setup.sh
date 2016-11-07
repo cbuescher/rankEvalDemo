@@ -20,6 +20,7 @@ git checkout feature/rank-eval
 git reset --hard origin/feature/rank-eval
 gradle assemble
 cd ..
+rm -rf elasticsearch-*
 tar -xvzf ./elasticsearch/distribution/tar/build/distributions/elasticsearch-6.0.0-alpha1-SNAPSHOT.tar.gz -C .
 
 currentpath="$(pwd)"
