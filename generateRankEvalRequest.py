@@ -2,6 +2,7 @@
 from elasticsearch import Elasticsearch
 import json
 import sys
+import math
 
 # Prequesites: 
 #    - elasticsearch instance running at localhost:9200
@@ -126,11 +127,12 @@ def createRequestForQuery(queryString, requestId) :
                 '_index' : 'enwiki_rank',
                 '_type' : 'page',
                 '_id' : str(idAndRating[0]),
-                'rating': float(idAndRating[1])
+                'rating': math.floor(float(idAndRating[1]))
             }
         )
     request = {
             'id' : requestId,
+	    'summary_fields': [ 'title' ],
             'params' : {
 		'query_string' : queryString
 	    },
@@ -148,13 +150,15 @@ def createRequestForQueries(queryStrings) :
 		# define your own request template here if needed
                 'template' : {
 		   'inline' : {
-			'query' : { 'match' : {'all' : '{{query_string}}' }}
+			'query' : { 'match' : {'all' : '{{query_string}}' }},
+      			'size': 5
 	 	   }
 		},  
 		# define your own metric here if needed
                 'metric' : {
-                   'precision' : {
-		       'relevant_rating_threshold' : 2
+                   'precision_atn' : {
+		       'relevant_rating_threshold' : 2,
+		       'size' : 5
                     }
                 },
                 'requests' : requests
