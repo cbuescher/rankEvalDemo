@@ -1,34 +1,27 @@
 # Demo _rank_eval
 
-GET /_cat/indices
-
 # some infos about the rated document corpus
-
 GET /enwiki_rank/_count
 
 GET /enwiki_rank/page/_mapping
 
 GET /enwiki_rank/page/5119376
 
-# somebody is looking for info about John F. Kennedy (information need),
-# searches for "JFK" in the search box. Application translate this to e.g.
-# simple match query on the "all" field (wikipedias "copy_to" default field)
+# user is looking for info about John F. Kennedy (information need), searches for "JFK" in the search box.
+# application translate this to e.g. simple match query on the "all" field (wikipedias "copy_to" default field)
 
-GET enwiki_rank/page/_search
+GET enwiki_rank/page/_search?filter_path=hits.hits._source.title
 {
   "query" : {
     "match" : {
       "all": "JFK"
     }
-  },
-  "_source" : "title"
+  }
 }
 
-# we can try to judge the quality of the query by looking at the results
-# change query (e.g. query "title", "opening_text", "text")
+# we can try to judge the quality of the query by looking at the results change query (e.g. query "title", "opening_text", "text")
 
-# problem: manual process, difficult to repeat, gut feeling
-# solution: provide ranking for search hits, calculate metrics like precision@N
+# problem: manual process, difficult to repeat, gut feeling solution: provide ranking for search hits, calculate metrics like precision@N
 
 POST /enwiki_rank/page/_rank_eval
 {
