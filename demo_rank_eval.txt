@@ -8,6 +8,8 @@ GET /enwiki_rank/_count
 
 GET /enwiki_rank/page/_mapping
 
+GET /enwiki_rank/page/5119376
+
 # somebody is looking for info about John F. Kennedy (information need),
 # searches for "JFK" in the search box. Application translate this to e.g.
 # simple match query on the "all" field (wikipedias "copy_to" default field)
@@ -349,8 +351,7 @@ POST /enwiki_rank/page/_rank_eval
     }
   ],
   "metric": {
-    "precision_atn": {
-      "size": 5,
+    "precision": {
       "relevant_rating_threshold": 2
     }
   }
@@ -711,8 +712,7 @@ POST /enwiki_rank/page/_rank_eval
     }
   ],
   "metric": {
-    "precision_atn": {
-      "size": 5,
+    "precision": {
       "relevant_rating_threshold": 2
     }
   }
@@ -1714,8 +1714,7 @@ POST /enwiki_rank/page/_rank_eval/template
     }
   ],
   "metric": {
-    "precision_atn": {
-      "size": 5,
+    "precision": {
       "relevant_rating_threshold": 2
     }
   }
@@ -2715,8 +2714,7 @@ POST /enwiki_rank/page/_rank_eval/template
     }
   ],
   "metric": {
-    "dcg_at_n": {
-      "size": 5,
+    "dcg": {
       "normalize" : true
     }
   }
