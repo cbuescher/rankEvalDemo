@@ -1,8 +1,5 @@
 {
   "dynamic": "false",
-  "_all": {
-    "enabled": false
-  },
   "properties": {
     "all": {
       "type": "text",

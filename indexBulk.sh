@@ -11,10 +11,10 @@ curl -s -XDELETE $es_target/$target?pretty
 
 # copy over settings and mappings from source index
 echo "putting settings to target"
-cat orig_settings.txt | curl -XPUT $es_target/$target?pretty -d @-
+cat orig_settings.txt | curl -XPUT -H 'Content-Type: application/json'  $es_target/$target?pretty -d @-
 
 echo "copying source mapping to target"
-cat corrected_mapping.txt | curl -XPUT $es_target/$target/_mapping/page?pretty -d @-
+cat corrected_mapping.txt | curl -XPUT -H 'Content-Type: application/json' $es_target/$target/_mapping/page?pretty -d @-
 
 # finally write everything in bulk
 echo "bulk indexing"
@@ -22,7 +22,7 @@ echo "bulk indexing"
 # chop down bulk file, might be too large otherwise
 for file in parts/bulkpart_*; do
   echo -n "${file}:  "
-  took=$(curl -s -XPOST $es_target/$target/_bulk?pretty --data-binary @$file |
+  took=$(curl -s -XPOST -H 'Content-Type: application/json' $es_target/$target/_bulk?pretty --data-binary @$file |
     grep took | cut -d':' -f 2 | cut -d',' -f 1)
   printf '%7s\n' $took
   [ "x$took" = "x" ] 
