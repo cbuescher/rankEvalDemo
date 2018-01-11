@@ -23,7 +23,7 @@ GET enwiki_rank/page/_search?filter_path=hits.hits._source.title
 
 # problem: manual process, difficult to repeat, gut feeling solution: provide ranking for search hits, calculate metrics like precision@N
 
-POST /enwiki_rank/page/_rank_eval
+POST /enwiki_rank/_rank_eval
 {
   "requests": [
     {
@@ -43,302 +43,302 @@ POST /enwiki_rank/page/_rank_eval
         {
           "_id": "3054546",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "5119376",
           "rating": 3,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "7957",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "23450997",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "959422",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "966691",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "1193731",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "39311",
           "rating": 2,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "1193732",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "589685",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "25740899",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "2230037",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "10663147",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "5714296",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "1014121",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "8116024",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "286369",
           "rating": 2,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "7460701",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "4342412",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "2319321",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "15593",
           "rating": 2,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "4619728",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "5874483",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "1647163",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "45391245",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "21764548",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "13736278",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "25754234",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "14076943",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "236473",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "23658402",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "97218",
           "rating": 2,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "42150967",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "1960697",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "22044230",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "30900421",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "24803878",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "18960158",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "11587452",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "183301",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "1199406",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "14581",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "1991172",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "10911837",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "1185823",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "4604373",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "32866171",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "21212971",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "320425",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "159362",
           "rating": 2,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         }
       ]
     }
@@ -354,7 +354,7 @@ POST /enwiki_rank/page/_rank_eval
 
 # some reasonably good result using this:
 
-POST /enwiki_rank/page/_rank_eval
+POST /enwiki_rank/_rank_eval
 {
   "requests": [
     {
@@ -404,302 +404,302 @@ POST /enwiki_rank/page/_rank_eval
         {
           "_id": "3054546",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "5119376",
           "rating": 3,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "7957",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "23450997",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "959422",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "966691",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "1193731",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "39311",
           "rating": 2,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "1193732",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "589685",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "25740899",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "2230037",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "10663147",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "5714296",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "1014121",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "8116024",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "286369",
           "rating": 2,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "7460701",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "4342412",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "2319321",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "15593",
           "rating": 2,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "4619728",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "5874483",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "1647163",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "45391245",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "21764548",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "13736278",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "25754234",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "14076943",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "236473",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "23658402",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "97218",
           "rating": 2,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "42150967",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "1960697",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "22044230",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "30900421",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "24803878",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "18960158",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "11587452",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "183301",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "1199406",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "14581",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "1991172",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "10911837",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "1185823",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "4604373",
           "rating": 0,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "32866171",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "21212971",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "320425",
           "rating": 1,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         },
         {
           "_id": "159362",
           "rating": 2,
-          "_index": "enwiki_rank",
-          "_type": "page"
+          "_index": "enwiki_rank"
+
         }
       ]
     }
@@ -716,13 +716,14 @@ POST /enwiki_rank/page/_rank_eval
 # take ratings for "JFK", "the great beer flood", "naval flags"
 # use templating to share query across those cases without repeating it
 
-
-POST /enwiki_rank/page/_rank_eval/template
+POST /enwiki_rank/_rank_eval
 {
-  "template": {
-    "inline": {
-      "size": 5,
-      "query": {
+  "templates": [
+    {
+      "id" : "my_template",
+      "template" : {
+        "source" : {
+          "query": {
           "function_score": {
             "query": {
               "bool": {
@@ -756,12 +757,16 @@ POST /enwiki_rank/page/_rank_eval/template
             ],
             "boost_mode": "multiply"
           }
+        },
+          "size" : 5
         }
+      }
     }
-  },
+  ],
   "requests": [
     {
       "id": "JFK_query",
+      "template_id": "my_template",
       "params": {
         "query_string": "JFK"
       },
@@ -769,301 +774,301 @@ POST /enwiki_rank/page/_rank_eval/template
         {
           "_index": "enwiki_rank",
           "_id": "25754234",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "22044230",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "4604373",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "10663147",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "1193732",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "97218",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "4619728",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "286369",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "183301",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "159362",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "1193731",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "236473",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "1960697",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "25740899",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "2319321",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "14076943",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "1185823",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "23658402",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "320425",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "1991172",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "32866171",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "5874483",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "5119376",
-          "_type": "page",
+
           "rating": 3
         },
         {
           "_index": "enwiki_rank",
           "_id": "4342412",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "24803878",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "13736278",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "21764548",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "1199406",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "5714296",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "11587452",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "1014121",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "21212971",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "8116024",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "23450997",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "7957",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "959422",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "10911837",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "18960158",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "45391245",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "14581",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "30900421",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "7460701",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "1647163",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "589685",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "966691",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "39311",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "2230037",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "42150967",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "3054546",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "15593",
-          "_type": "page",
+
           "rating": 2
         }
       ],
@@ -1073,6 +1078,7 @@ POST /enwiki_rank/page/_rank_eval/template
     },
     {
       "id": "the_great_beer_flood_query",
+      "template_id": "my_template",
       "params": {
         "query_string": "the great beer flood"
       },
@@ -1080,319 +1086,319 @@ POST /enwiki_rank/page/_rank_eval/template
         {
           "_index": "enwiki_rank",
           "_id": "18315",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "8533032",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "192480",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "1461470",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "931871",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "794129",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "80028",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "629870",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "1203711",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "10481",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "218075",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "162249",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "40387083",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "13370208",
-          "_type": "page",
+
           "rating": 3
         },
         {
           "_index": "enwiki_rank",
           "_id": "3582891",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "345577",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "58547",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "22763",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "414744",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "1151773",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "62480",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "1377948",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "231395",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "2012260",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "728136",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "71262",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "123052",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "195565",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "4939127",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "2108886",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "41228854",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "6195",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "7688189",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "98933",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "6095325",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "42208",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "41523",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "454915",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "443940",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "22366",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "249601",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "42082319",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "312755",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "11960536",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "7806078",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "5509936",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "34948",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "47436315",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "31033",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "100144",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "9994744",
-          "_type": "page",
+
           "rating": 3
         },
         {
           "_index": "enwiki_rank",
           "_id": "11830664",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "874",
-          "_type": "page",
+
           "rating": 0
         }
       ],
@@ -1402,6 +1408,7 @@ POST /enwiki_rank/page/_rank_eval/template
     },
     {
       "id": "naval_flags_query",
+      "template_id": "my_template",
       "params": {
         "query_string": "naval flags"
       },
@@ -1409,295 +1416,295 @@ POST /enwiki_rank/page/_rank_eval/template
         {
           "_index": "enwiki_rank",
           "_id": "4341152",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "3994407",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "7262794",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "2417649",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "145567",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "10794987",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "37782431",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "2809754",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "32751625",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "22759867",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "1275629",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "2935569",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "244053",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "189155",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "14952458",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "5926579",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "1278471",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "46911674",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "2896705",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "11535807",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "3228943",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "27233780",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "923222",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "649542",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "2568690",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "19712569",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "1781873",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "13090210",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "1101547",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "40671039",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "556939",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "24564752",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "607751",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "201877",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "500635",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "11902823",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "24509049",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "5644559",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "326003",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "1981057",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "3474910",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "24484048",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "4061602",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "10927369",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "19741001",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "11424",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "2475785",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "421737",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "293048",
-          "_type": "page",
+
           "rating": 1
         }
       ],
@@ -1713,16 +1720,19 @@ POST /enwiki_rank/page/_rank_eval/template
   }
 }
 
+
 # we can e.g. play around with the function_score parameters
 
 # also to demonstrate a different metric (dcg)
 
-POST /enwiki_rank/page/_rank_eval/template
+POST /enwiki_rank/_rank_eval
 {
-  "template": {
-    "inline": {
-      "size": 5,
-      "query": {
+  "templates": [
+    {
+      "id" : "my_template",
+      "template" : {
+        "source" : {
+          "query": {
           "function_score": {
             "query": {
               "bool": {
@@ -1756,12 +1766,16 @@ POST /enwiki_rank/page/_rank_eval/template
             ],
             "boost_mode": "multiply"
           }
+        },
+          "size" : 5
         }
+      }
     }
-  },
+  ],
   "requests": [
     {
       "id": "JFK_query",
+      "template_id": "my_template",
       "params": {
         "query_string": "JFK"
       },
@@ -1769,301 +1783,301 @@ POST /enwiki_rank/page/_rank_eval/template
         {
           "_index": "enwiki_rank",
           "_id": "25754234",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "22044230",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "4604373",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "10663147",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "1193732",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "97218",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "4619728",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "286369",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "183301",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "159362",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "1193731",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "236473",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "1960697",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "25740899",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "2319321",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "14076943",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "1185823",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "23658402",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "320425",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "1991172",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "32866171",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "5874483",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "5119376",
-          "_type": "page",
+
           "rating": 3
         },
         {
           "_index": "enwiki_rank",
           "_id": "4342412",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "24803878",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "13736278",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "21764548",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "1199406",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "5714296",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "11587452",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "1014121",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "21212971",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "8116024",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "23450997",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "7957",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "959422",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "10911837",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "18960158",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "45391245",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "14581",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "30900421",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "7460701",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "1647163",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "589685",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "966691",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "39311",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "2230037",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "42150967",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "3054546",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "15593",
-          "_type": "page",
+
           "rating": 2
         }
       ],
@@ -2073,6 +2087,7 @@ POST /enwiki_rank/page/_rank_eval/template
     },
     {
       "id": "the_great_beer_flood_query",
+      "template_id": "my_template",
       "params": {
         "query_string": "the great beer flood"
       },
@@ -2080,319 +2095,319 @@ POST /enwiki_rank/page/_rank_eval/template
         {
           "_index": "enwiki_rank",
           "_id": "18315",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "8533032",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "192480",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "1461470",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "931871",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "794129",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "80028",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "629870",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "1203711",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "10481",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "218075",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "162249",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "40387083",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "13370208",
-          "_type": "page",
+
           "rating": 3
         },
         {
           "_index": "enwiki_rank",
           "_id": "3582891",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "345577",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "58547",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "22763",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "414744",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "1151773",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "62480",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "1377948",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "231395",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "2012260",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "728136",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "71262",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "123052",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "195565",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "4939127",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "2108886",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "41228854",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "6195",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "7688189",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "98933",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "6095325",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "42208",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "41523",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "454915",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "443940",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "22366",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "249601",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "42082319",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "312755",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "11960536",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "7806078",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "5509936",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "34948",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "47436315",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "31033",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "100144",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "9994744",
-          "_type": "page",
+
           "rating": 3
         },
         {
           "_index": "enwiki_rank",
           "_id": "11830664",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "874",
-          "_type": "page",
+
           "rating": 0
         }
       ],
@@ -2402,6 +2417,7 @@ POST /enwiki_rank/page/_rank_eval/template
     },
     {
       "id": "naval_flags_query",
+      "template_id": "my_template",
       "params": {
         "query_string": "naval flags"
       },
@@ -2409,295 +2425,295 @@ POST /enwiki_rank/page/_rank_eval/template
         {
           "_index": "enwiki_rank",
           "_id": "4341152",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "3994407",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "7262794",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "2417649",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "145567",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "10794987",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "37782431",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "2809754",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "32751625",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "22759867",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "1275629",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "2935569",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "244053",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "189155",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "14952458",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "5926579",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "1278471",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "46911674",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "2896705",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "11535807",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "3228943",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "27233780",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "923222",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "649542",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "2568690",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "19712569",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "1781873",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "13090210",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "1101547",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "40671039",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "556939",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "24564752",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "607751",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "201877",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "500635",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "11902823",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "24509049",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "5644559",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "326003",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "1981057",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "3474910",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "24484048",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "4061602",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "10927369",
-          "_type": "page",
+
           "rating": 0
         },
         {
           "_index": "enwiki_rank",
           "_id": "19741001",
-          "_type": "page",
+
           "rating": 2
         },
         {
           "_index": "enwiki_rank",
           "_id": "11424",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "2475785",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "421737",
-          "_type": "page",
+
           "rating": 1
         },
         {
           "_index": "enwiki_rank",
           "_id": "293048",
-          "_type": "page",
+
           "rating": 1
         }
       ],
@@ -2716,7 +2732,7 @@ POST /enwiki_rank/page/_rank_eval/template
 
 #--------
 
-GET enwiki_rank/page/_search
+GET enwiki_rank/_search
 {
   "query" : {
     "match" : {
