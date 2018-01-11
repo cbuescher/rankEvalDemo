@@ -32,10 +32,6 @@
         "type": "stemmer",
         "language": "possessive_english"
       },
-      "icu_normalizer": {
-        "name": "nfkc_cf",
-        "type": "icu_normalizer"
-      },
       "custom_stem": {
         "type": "stemmer_override",
         "rules": "guidelines => guideline"
@@ -64,15 +60,11 @@
     },
     "analyzer": {
       "trigram": {
-        "filter": [
-          "icu_normalizer"
-        ],
         "type": "custom",
         "tokenizer": "trigram"
       },
       "prefix_asciifolding": {
         "filter": [
-          "icu_normalizer",
           "asciifolding"
         ],
         "char_filter": [
@@ -83,7 +75,6 @@
       },
       "lowercase_keyword": {
         "filter": [
-          "icu_normalizer",
           "asciifolding_preserve"
         ],
         "type": "custom",
@@ -92,7 +83,6 @@
       "plain": {
         "filter": [
           "standard",
-          "icu_normalizer",
           "asciifolding_preserve"
         ],
         "char_filter": [
@@ -102,9 +92,6 @@
         "tokenizer": "standard"
       },
       "prefix": {
-        "filter": [
-          "icu_normalizer"
-        ],
         "char_filter": [
           "near_space_flattener"
         ],
@@ -113,8 +100,7 @@
       },
       "plain_search": {
         "filter": [
-          "standard",
-          "icu_normalizer"
+          "standard"
         ],
         "char_filter": [
           "word_break_helper"
@@ -125,7 +111,6 @@
       "suggest": {
         "filter": [
           "standard",
-          "icu_normalizer",
           "suggest_shingle"
         ],
         "type": "custom",
@@ -136,7 +121,6 @@
           "standard",
           "aggressive_splitting",
           "possessive_english",
-          "icu_normalizer",
           "stop",
           "kstem",
           "custom_stem",
@@ -153,7 +137,6 @@
           "standard",
           "aggressive_splitting",
           "possessive_english",
-          "icu_normalizer",
           "stop",
           "kstem",
           "custom_stem",
@@ -168,7 +151,6 @@
       "word_prefix": {
         "filter": [
           "standard",
-          "icu_normalizer",
           "prefix_ngram_filter"
         ],
         "type": "custom",
@@ -176,7 +158,6 @@
       },
       "near_match_asciifolding": {
         "filter": [
-          "icu_normalizer",
           "asciifolding"
         ],
         "char_filter": [
@@ -186,9 +167,6 @@
         "tokenizer": "no_splitting"
       },
       "near_match": {
-        "filter": [
-          "icu_normalizer"
-        ],
         "char_filter": [
           "near_space_flattener"
         ],
