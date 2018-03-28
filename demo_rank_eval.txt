@@ -1,4 +1,17 @@
-# Demo _rank_eval
+# Demo Ranking Evaluation API (_rank_eval)
+
+# https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-rank-eval.html
+
+# The ranking evaluation API allows to evaluate the quality of ranked search results over a set of typical search queries. Given this set of queries and a list or manually rated documents, the _rank_eval endpoint calculates and returns typical information retrieval metrics like mean reciprocal rank, precision or discounted cumulative gain.
+
+# Main goals:
+# - facilitate query development and testing in Dev
+# - enable long-term quality testing of existing search systems in Prod
+# - provide building blocks for more sofisticated operations, e.g. (semi)-automatic tuning of boost, similarity parameters etc...
+
+# --> on to the demo ...
+
+
 
 # We are using a small subset of the english wikipedia corpus
 GET /enwiki_rank/_count
