@@ -7,7 +7,7 @@ For further on the API are available in the [documentation](https://www.elastic.
 
 This project contains example documents from the english Wikipedia corpus to demonstrate the API.
 
-## Setup
+## Setup
 
 In order to run the demo, you currently need at least Elasticsearch 6.2 installed. In addition to that you need to install the `analysis-icu` plugin to be able to use the wikipedia mapping:
 
