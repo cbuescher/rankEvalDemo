@@ -40,21 +40,21 @@ GET /enwiki_rank/page/5119376
 #         2 = Probably Relevant
 #         3 = Relevant
 
+# Lets start with a simple example:
 # - user is looking for info about John F. Kennedy (information need)
 # - types "JFK" in the search box
-# - we don't know anything about the data yet,
-#   lets take simple match query on the "all" field (the "copy_to" default field)
+# - we don't know anything about the data yet, so lets take simple match query on the "all" field (the "copy_to" default field)
 
 GET enwiki_rank/page/_search?filter_path=hits.hits._source.title
 {
   "query" : {
     "match" : {
-      "all": "JFK"
+      "all" : "JFK"
     }
   }
 }
 
-# clearly not as good as could be, the article John F. Kennedy" doesn't even appear. Maybe use some more specific fields
+# Clearly not as good as could be, the article John F. Kennedy" doesn't even appear. Maybe use some more specific fields
 
 GET enwiki_rank/page/_search?filter_path=hits.hits._source.title
 {
@@ -73,7 +73,7 @@ GET enwiki_rank/page/_search?filter_path=hits.hits._source.title
 
 # We can continue to try to judge the quality of the query by looking at the results change query
 
-# Problem: manual process, difficult to repeat, gut feeling
+# Problem: manual process, difficult to repeat, relies on gut feeling
 # Solution: Use ranking evaluation: provide ranking for search hits, calculate metrics like precision@N
 
 POST /enwiki_rank/_rank_eval
@@ -353,15 +353,15 @@ POST /enwiki_rank/_rank_eval
   ],
   "metric": {
     "precision": {
-      "relevant_rating_threshold": 2,
-      "k": 5
+      "relevant_rating_threshold": "..",
+      "k": 10
     }
   }
 }
 
-# can now play with e.g. field I'm searching on, trying to improve the metric
+# we can now play with e.g. the fields to search on
 
-# some reasonably good result using this:
+# some reasonably good result including also function score this:
 
 POST /enwiki_rank/_rank_eval
 {
@@ -1506,10 +1506,10 @@ POST /enwiki_rank/_rank_eval
   }
 }
 
-# looking at the results, quality for "naval flag" and "beer" query is bad (0), maybe the function score has too much weight. Lower that (e.g. try damping function "log2p")
-# we can play around with the function_score parameters a bit more
+# looking at the results, quality for "naval flag" and "beer" query is bad (0), maybe the function score has too much weight. Lower that (e.g. try damping function "log2p"), or take it out completely and add "text" field...
 
-# also to demonstrate a different metric (dcg)
+
+# Lastly, also to demonstrate a different metric (normalized DCG a.k.a. NDCG)
 
 POST /enwiki_rank/_rank_eval
 {
@@ -1536,7 +1536,7 @@ POST /enwiki_rank/_rank_eval
                   "field_value_factor": {
                     "field": "popularity_score",
                     "missing": 1,
-                    "modifier": "log2p"
+                    "modifier": "none"
                   }
                 }
               ],
@@ -2499,7 +2499,8 @@ POST /enwiki_rank/_rank_eval
   ],
   "metric": {
     "dcg": {
-      "normalize" : true
+      "normalize" : true,
+      "k" : 5
     }
   }
 }
