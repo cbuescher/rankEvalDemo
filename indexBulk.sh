@@ -19,7 +19,7 @@ cat enwiki-mapping.json | curl -XPUT -H 'Content-Type: application/json' $es_tar
 echo "bulk indexing"
 
 # chop down bulk file, might be too large otherwise
-for file in parts/bulkpart_*; do
+for file in bulkdata/bulkpart_*; do
   echo -n "${file}:  "
   result=$(curl -s -XPOST -H 'Content-Type: application/json' $es_target/$target/_bulk?pretty --data-binary @$file)
   # echo $result > ${file}_bulklog.txt

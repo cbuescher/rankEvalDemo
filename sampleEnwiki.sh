@@ -53,4 +53,4 @@ done < queries.txt
 
 # split the large bulk_index.txt into parts 
 split -a 3 -l 500 bulk_index.txt bulkpart_
-mv bulkpart_* parts
+mv bulkpart_* bulkdata 
