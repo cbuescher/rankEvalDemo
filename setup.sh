@@ -1,51 +1,33 @@
 #!/bin/bash
 
-if [ ! -e "demo" ]
-then
-    mkdir demo
-fi
-cd demo
-if [ ! -e "elasticsearch" ]
-then
-    git clone https://github.com/elastic/elasticsearch
-fi
+# change the following url and index names to reflect your local ES instance and source index
+es_target=localhost:9200
+target=enwiki_rank
 
-if [ ! -e "kibana" ]
-then
-    git clone https://github.com/elastic/kibana
-fi
-cd elasticsearch
-git fetch
-git checkout feature/rank-eval
-git reset --hard origin/feature/rank-eval
-gradle assemble
-cd ..
-rm -rf elasticsearch-*
-tar -xvzf ./elasticsearch/distribution/tar/build/distributions/elasticsearch-6.0.0-alpha1-SNAPSHOT.tar.gz -C .
+# clean target index in case it already exists
+index_status=`curl -o /dev/null -s -w "%{http_code}" -I $es_target/$target`
 
-currentpath="$(pwd)"
-elasticsearch-6.0.0-alpha1-SNAPSHOT/bin/elasticsearch-plugin install file://localhost$currentpath/elasticsearch/plugins/analysis-icu/build/distributions/analysis-icu-6.0.0-alpha1-SNAPSHOT.zip
-
-cd kibana
-git fetch
-git reset --hard origin/master
-if ! type "$nvm" > /dev/null; then
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+if [[ $index_status -eq 200 ]]; then 
+  echo "Removing target index $es_target/$target"
+  curl -s -XDELETE $es_target/$target?pretty
 fi
 
-nvm install "$(cat .node-version)"
+# copy over settings and mappings from source index
+echo "copy settings to $target"
+cat enwiki-settings.json | curl -XPUT -H 'Content-Type: application/json'  $es_target/$target?pretty -d @-
 
-npm install
+echo "copy mapping to $target"
+cat enwiki-mapping.json | curl -XPUT -H 'Content-Type: application/json' $es_target/$target/_mapping/page?pretty -d @-
 
-cd ..
+# finally write everything in bulk
+echo "bulk indexing"
 
-printf "To start the demo first start elasticsearch:"
-printf "\n\n./demo/elasticsearch-6.0.0-alpha1-SNAPSHOT/bin/elasticsearch"
-printf "\n\nIndex the testdata with:"
-printf "\n\n./indexBulk.sh"
-printf "\n\nThen start kibana:"
-printf "\n\ncd ./demo/kibana"
-printf "\nnpm start\n"
-
+# chop down bulk file, might be too large otherwise
+for file in bulkdata/bulkpart_*; do
+  echo -n "${file}:  "
+  result=$(curl -s -XPOST -H 'Content-Type: application/json' $es_target/$target/_bulk?pretty --data-binary @$file)
+  # echo $result > ${file}_bulklog.txt
+  took=$(echo $result |    grep took | cut -d':' -f 2 | cut -d',' -f 1)
+  printf '%7s\n' $took
+  [ "x$took" = "x" ] 
+done
