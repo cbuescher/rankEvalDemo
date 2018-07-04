@@ -354,7 +354,7 @@ POST /enwiki_rank/_rank_eval
   "metric": {
     "precision": {
       "relevant_rating_threshold": "..",
-      "k": 10
+      "k": 5 
     }
   }
 }

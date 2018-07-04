@@ -24,10 +24,10 @@ echo "bulk indexing"
 
 # chop down bulk file, might be too large otherwise
 for file in bulkdata/bulkpart_*; do
-  echo -n "${file}:  "
+  echo -n "indexing ${file}"
   result=$(curl -s -XPOST -H 'Content-Type: application/json' $es_target/$target/_bulk?pretty --data-binary @$file)
   # echo $result > ${file}_bulklog.txt
   took=$(echo $result |    grep took | cut -d':' -f 2 | cut -d',' -f 1)
-  printf '%7s\n' $took
+  printf ', took %7s ms.\n' $took
   [ "x$took" = "x" ] 
 done
