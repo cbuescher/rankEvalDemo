@@ -6,14 +6,12 @@ POST /enwiki_rank/_rank_eval
       "template": {
         "source": {
           "query": {
-            "function_score": {
-              "query": {
               "multi_match": {
                 "query": "{{query_string}}",
                 "type": "best_fields",
                 "fields": [
-                  "title.near_match",
-                  "opening_text.plain",
+                  "title",
+                  "opening_text",
                   "redirect.title.near_match"
                 ]
               }
@@ -21,7 +19,6 @@ POST /enwiki_rank/_rank_eval
           }
         }
       }
-    }
   ],
   "requests": [
     {
