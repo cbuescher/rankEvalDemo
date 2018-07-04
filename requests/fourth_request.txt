@@ -1,4 +1,4 @@
-iPOST /enwiki_rank/_rank_eval
+POST /enwiki_rank/_rank_eval
 {
   "templates": [
     {
@@ -17,17 +17,6 @@ iPOST /enwiki_rank/_rank_eval
                   "redirect.title.near_match"
                 ]
               }
-            },
-              "functions": [
-                {
-                  "field_value_factor": {
-                    "field": "popularity_score",
-                    "missing": 1,
-                    "modifier": "none"
-                  }
-                }
-              ],
-              "boost_mode": "multiply"
             }
           }
         }
