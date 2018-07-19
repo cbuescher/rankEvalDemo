@@ -1,4 +1,4 @@
-iPOST /enwiki_rank/_rank_eval
+POST /enwiki_rank/_rank_eval
 {
   "templates": [
     {
