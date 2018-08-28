@@ -4,9 +4,11 @@ The Ranking Evaluation API allows to evaluate the quality of ranked search resul
 
 For further on the API are available in the [documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-rank-eval.html)
 
+This demo is part of a longer [blog post](https://www.elastic.co/blog/made-to-measure-how-to-use-the-ranking-evaluation-api-in-elasticsearch) with more detailed steps about running it.
+
 ## Setup
 
-In order to run the demo, you need at least Elasticsearch 6.2 installed.
+In order to run the demo, you need at least Elasticsearch 6.3 installed.
 Next, run the `setup.sh` script contained in this project. The script assumes you are running Elasticsearch locally on port 9200 and installs the demo data, including settings and mappings, to an index called `enwiki_rank`. 
 
 After that you should be ready to run the examples from `demo_rank_eval.txt` in the Kibana Console.
