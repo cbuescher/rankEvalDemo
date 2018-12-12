@@ -55,6 +55,7 @@ GET enwiki_rank/page/_search?filter_path=hits.hits._source.title
 }
 
 # Clearly not as good as could be, the article John F. Kennedy" doesn't even appear. Maybe use some more specific fields
+# hint: try also "opening_text", "redirect.title.near_match"
 
 GET enwiki_rank/page/_search?filter_path=hits.hits._source.title
 {
@@ -63,9 +64,7 @@ GET enwiki_rank/page/_search?filter_path=hits.hits._source.title
       "query": "JFK",
       "type": "best_fields",
       "fields": [
-        "title",
-        "opening_text",
-        "redirect.title.near_match"
+        "title"
       ]
     }
   }
@@ -354,7 +353,7 @@ POST /enwiki_rank/_rank_eval
   "metric": {
     "precision": {
       "relevant_rating_threshold": "..",
-      "k": 5 
+      "k": 5
     }
   }
 }
