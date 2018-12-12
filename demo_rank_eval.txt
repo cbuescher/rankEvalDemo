@@ -352,7 +352,7 @@ POST /enwiki_rank/_rank_eval
   ],
   "metric": {
     "precision": {
-      "relevant_rating_threshold": "..",
+      "relevant_rating_threshold": "2",
       "k": 5
     }
   }
