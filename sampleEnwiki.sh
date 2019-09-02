@@ -13,12 +13,12 @@ while read title;
 do
   result=$(echo "{}" | jq --arg titel "$title" '{ query: { bool: { should: [ {
 match: { "title.keyword": $titel } }, { match: { "redirect.title.keyword":
-$titel } } ] } } }' | curl -s -XGET -H'Content-Type: application/json' $es/$index/page/_search?pretty -d @-
+$titel } } ] } } }' | curl -s -XGET -H'Content-Type: application/json' $es/$index/_search?pretty -d @-
   )
   id=$(echo $result | jq -r .hits.hits[0]._id)
   source=$(echo $result | jq -c .hits.hits[0]._source)
   if [ $id != null ]; then
-     echo '{"index" : { "_type" : "page", "_id" : "'$id'" } }' >> bulk_index.txt
+     echo '{"index" : { "_id" : "'$id'" } }' >> bulk_index.txt
      echo $source >> bulk_index.txt
   else
      echo "title [$title] not found"
@@ -27,14 +27,14 @@ done <titles.txt
 
 # also add some article that are potentially not rated by using
 # the query string against the all field and copy top 20 hits
-echo "running all queries on _all field and get top 20"
+echo "running all queries against field 'all' and get the first 20 hits"
 cat discernatron_ratings.tsv|awk -F'\t' '{print $1}' | sort | uniq > queries.txt 
 
 while read query;
 do
   result=$(echo "{}" | 
     jq --arg query "$query" '{ query: { match: { "all": $query } } , "size" : 20 }' |
-    curl -s -XGET  -H'Content-Type: application/json' $es/$index/page/_search?pretty -d @-)
+    curl -s -XGET  -H'Content-Type: application/json' $es/$index/_search?pretty -d @-)
   #echo $result
   hits=$(echo $result | jq ' .hits.hits | length')
   if [ $hits != 0 ]; then
@@ -43,7 +43,7 @@ do
     do
       id=$(echo $result | jq --arg i $i -r ' .hits.hits[$i|tonumber]._id')
       source=$(echo $result | jq --arg i $i -c ' .hits.hits[$i|tonumber]._source')
-      echo '{"index" : { "_type" : "page", "_id" : "'$id'" } }' >> bulk_index.txt
+      echo '{"index" : { "_id" : "'$id'" } }' >> bulk_index.txt
       echo $source >> bulk_index.txt
     done
   else

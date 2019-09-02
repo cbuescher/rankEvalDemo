@@ -1,7 +1,7 @@
 # I want to search for jfk but have no idea about a good query, so I try
 # different fields for example
 
-GET /enwiki_rank/page/_search
+GET /enwiki_rank/_search
 {
   "query": {
     "match": {
@@ -13,7 +13,7 @@ GET /enwiki_rank/page/_search
 
 # ^ not so good, lots of airport infra
 
-GET /enwiki_rank/page/_search
+GET /enwiki_rank/_search
 {
   "query": {
     "match": {
@@ -25,7 +25,7 @@ GET /enwiki_rank/page/_search
 
 # ^ first hits look okay, not sure about the rest
 
-GET /enwiki_rank/page/_search
+GET /enwiki_rank/_search
 {
   "query": {
     "match": {
@@ -39,7 +39,7 @@ GET /enwiki_rank/page/_search
 
 # Now we need to do this with somewhat similar user inputs
 
-GET /enwiki_rank/page/_search
+GET /enwiki_rank/_search
 {
   "query": {
     "match": {
@@ -51,7 +51,7 @@ GET /enwiki_rank/page/_search
 
 # ^probably not too bad?
 
-GET /enwiki_rank/page/_search
+GET /enwiki_rank/_search
 {
   "query": {
     "match": {
@@ -65,7 +65,7 @@ GET /enwiki_rank/page/_search
 
 ### use rated documents and _rank_eval endpoint
 
-GET /enwiki_rank/page/_rank_eval
+GET /enwiki_rank/_rank_eval
 {
   "spec_id" : "my-rank-eval",
   "requests" : [
