@@ -9,6 +9,8 @@ This demo is part of a longer [blog post](https://www.elastic.co/blog/made-to-me
 ## Setup
 
 In order to run the demo, you need at least Elasticsearch 7.0 installed.
+In case you are running an earlier 6.x version of Elasticsearch, there might be some [older 6.x branches](https://github.com/cbuescher/rankEvalDemo/branches)
+with the correct syntax and data format for your version.
 Next, run the `setup.sh` script contained in this project. The script assumes you are running Elasticsearch locally on port 9200 and installs the demo data, including settings and mappings, to an index called `enwiki_rank`. 
 
 After that you should be ready to run the examples from `demo_rank_eval.txt` in the Kibana Console.
