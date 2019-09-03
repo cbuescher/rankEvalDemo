@@ -1,8 +1,5 @@
 {
   "dynamic": "false",
-  "_all": {
-    "enabled": false
-  },
   "properties": { "defaultsort" : { "type" : "keyword" },
     "all": {
       "type": "text",

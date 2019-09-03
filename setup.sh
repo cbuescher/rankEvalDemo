@@ -17,7 +17,7 @@ echo "copy settings to $target"
 cat enwiki-settings.json | curl -XPUT -H 'Content-Type: application/json'  $es_target/$target?pretty -d @-
 
 echo "copy mapping to $target"
-cat enwiki-mapping.json | curl -XPUT -H 'Content-Type: application/json' $es_target/$target/_mapping/page?pretty -d @-
+cat enwiki-mapping.json | curl -XPUT -H 'Content-Type: application/json' $es_target/$target/_mapping?pretty -d @-
 
 # finally write everything in bulk
 echo "bulk indexing"

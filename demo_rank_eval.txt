@@ -1,6 +1,6 @@
 # Demo Ranking Evaluation API (_rank_eval)
 
-# https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-rank-eval.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/current/search-rank-eval.html
 
 # The ranking evaluation API allows to evaluate the quality of ranked search results over a set of typical search queries. Given this set of queries and a list or manually rated documents, the _rank_eval endpoint calculates and returns typical information retrieval metrics like mean reciprocal rank, precision or discounted cumulative gain.
 
@@ -12,13 +12,12 @@
 # --> on to the demo ...
 
 
-
 # We are using a small subset of the english wikipedia corpus
 GET /enwiki_rank/_count
 
-GET /enwiki_rank/page/_mapping
+GET /enwiki_rank/_mapping
 
-GET /enwiki_rank/page/5119376
+GET /enwiki_rank/_doc/5119376
 
 # subset selected to include rated documents from Wikimedia labs
 # "discernatron" project: http://discernatron.wmflabs.org
@@ -40,13 +39,24 @@ GET /enwiki_rank/page/5119376
 #         2 = Probably Relevant
 #         3 = Relevant
 
+
+# ==================================================
+# Demo 1
+# ==================================================
+
 # Lets start with a simple example:
 # - user is looking for info about John F. Kennedy (information need)
 # - types "JFK" in the search box
 # - we don't know anything about the data yet, so lets take simple match query on the "all" field (the "copy_to" default field)
 
-GET enwiki_rank/page/_search?filter_path=hits.hits._source.title
+# --------------------------------------------------
+# Step 1.1: change field: "all" -> "text"
+# Step 1.2: change field "text" -> "title"
+# --------------------------------------------------
+
+GET enwiki_rank/_search
 {
+  "_source": "title", 
   "query" : {
     "match" : {
       "all" : "JFK"
@@ -54,10 +64,22 @@ GET enwiki_rank/page/_search?filter_path=hits.hits._source.title
   }
 }
 
+GET enwiki_rank/_search?filter_path=hits.total.value,hits.hits._source.title&q=all:JFK
+
+
+# ==================================================
+# Demo 2
+# ==================================================
+
 # Clearly not as good as could be, the article John F. Kennedy" doesn't even appear. Maybe use some more specific fields
 # hint: try also "opening_text", "redirect.title.near_match"
 
-GET enwiki_rank/page/_search?filter_path=hits.hits._source.title
+# --------------------------------------------------
+# Step 2.1: add fields: "text" & "auxiliary_text"
+# Step 2.2: replace "text" & "auxiliary_text" with more specific fields: "opening_text" & "redirect.title.near_match"
+# --------------------------------------------------
+
+GET enwiki_rank/_search?filter_path=hits.total.value,hits.hits._source.title
 {
   "query": {
     "multi_match": {
@@ -70,10 +92,19 @@ GET enwiki_rank/page/_search?filter_path=hits.hits._source.title
   }
 }
 
+# ==================================================
+# Demo 3
+# ==================================================
+
 # We can continue to try to judge the quality of the query by looking at the results change query
 
 # Problem: manual process, difficult to repeat, relies on gut feeling
 # Solution: Use ranking evaluation: provide ranking for search hits, calculate metrics like precision@N
+
+
+# --------------------------------------------------
+# Step 3.1: explain _rank_eval request
+# --------------------------------------------------
 
 POST /enwiki_rank/_rank_eval
 {
@@ -352,15 +383,23 @@ POST /enwiki_rank/_rank_eval
   ],
   "metric": {
     "precision": {
-      "relevant_rating_threshold": "2",
+      "relevant_rating_threshold": 2,
       "k": 5
     }
   }
 }
 
+# ==================================================
+# Demo 4
+# ==================================================
+
 # we can now play with e.g. the fields to search on
 
 # some reasonably good result including also function score this:
+
+# --------------------------------------------------
+# Step 4.1: explain function score, popularity
+# --------------------------------------------------
 
 POST /enwiki_rank/_rank_eval
 {
@@ -385,7 +424,8 @@ POST /enwiki_rank/_rank_eval
               {
                 "field_value_factor": {
                   "field": "popularity_score",
-                  "missing": 1
+                  "missing": 1,
+                  "modifier": "none"
                 }
               }
             ],
@@ -658,10 +698,26 @@ POST /enwiki_rank/_rank_eval
   }
 }
 
+
+# ==================================================
+# Demo 5
+# ==================================================
+
 # next question: how good does this query perform across multiple searches
 
 # take ratings for "JFK", "the great beer flood", "naval flags"
 # use templating to share query across those cases without repeating it
+
+# looking at the results, quality for "naval flag" and "beer" query is bad (0), maybe the function score has too much weight. Lower that (e.g. try damping function "log2p"), or take it out completely and add "text" field...
+
+# --------------------------------------------------
+# Step 5.1: explain template & information needs
+# Step 5.2: change boost_mode: "multiply" -> "sum"
+# Step 5.3: change modifier: "none -> "log2p"
+# --> Don't use modifiers that can lead to negative numbers!
+# Demo 5.4: remove functions & boost_mode
+# Demo 5.5: add fields: "text" & "search.keyword^2"
+# --------------------------------------------------
 
 POST /enwiki_rank/_rank_eval
 {
@@ -673,16 +729,16 @@ POST /enwiki_rank/_rank_eval
           "query": {
             "function_score": {
               "query": {
-              "multi_match": {
-                "query": "{{query_string}}",
-                "type": "best_fields",
-                "fields": [
-                  "title.near_match",
-                  "opening_text.plain",
-                  "redirect.title.near_match"
-                ]
-              }
-            },
+                "multi_match": {
+                  "query": "{{query_string}}",
+                  "type": "best_fields",
+                  "fields": [
+                    "title.near_match",
+                    "opening_text.plain",
+                    "redirect.title.near_match"
+                  ]
+                }
+              },
               "functions": [
                 {
                   "field_value_factor": {
@@ -1504,8 +1560,6 @@ POST /enwiki_rank/_rank_eval
     }
   }
 }
-
-# looking at the results, quality for "naval flag" and "beer" query is bad (0), maybe the function score has too much weight. Lower that (e.g. try damping function "log2p"), or take it out completely and add "text" field...
 
 
 # Lastly, also to demonstrate a different metric (normalized DCG a.k.a. NDCG)
@@ -2509,10 +2563,10 @@ POST /enwiki_rank/_rank_eval
 
 GET enwiki_rank/_search
 {
-  "query" : {
-    "match" : {
+  "query": {
+    "match": {
       "title.keyword": "John F. Kennedy"
     }
   },
-  "_source" : "opening_text"
+  "_source": "opening_text"
 }

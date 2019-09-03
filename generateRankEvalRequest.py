@@ -23,7 +23,6 @@ import math
 #       "ratings": [
 #         {
 #           "rating": 1,
-#           "_type": "page",
 #           "_id": "2680742",
 #           "_index": "enwiki_rank"
 #         },
@@ -44,7 +43,6 @@ import math
 #       "ratings": [
 #         {
 #           "rating": 0,
-#           "_type": "page",
 #           "_id": "234538",
 #           "_index": "enwiki_rank"
 #         },
